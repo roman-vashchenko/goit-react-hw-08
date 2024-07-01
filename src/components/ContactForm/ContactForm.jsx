@@ -1,12 +1,11 @@
 import * as Yup from "yup";
 import { useId } from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import css from "../RegistrationForm/RegistrationForm.module.css";
+import css from "../ContactForm/ContactForm.module.css";
 
 const initialValues = {
   name: "",
-  email: "",
-  password: "",
+  number: "",
 };
 
 const validationSchema = Yup.object().shape({
@@ -14,20 +13,15 @@ const validationSchema = Yup.object().shape({
     .min(3, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
-  email: Yup.string()
-    .min(10, "Too Short!")
-    .max(35, "Too Long!")
-    .required("Required"),
-  password: Yup.string()
-    .min(5, "Too Short!")
-    .max(10, "Too Long!")
+  number: Yup.string()
+    .min(3, "Too Short!")
+    .max(50, "Too Long!")
     .required("Required"),
 });
 
-const RegistrationForm = ({ submit }) => {
+const ContactForm = ({ submit }) => {
   const nameFieldId = useId();
-  const emailFieldId = useId();
-  const passwordFieldId = useId();
+  const nubmerFieldId = useId();
 
   const handleSubmit = (values, actions) => {
     submit(values);
@@ -45,20 +39,16 @@ const RegistrationForm = ({ submit }) => {
         <Field type="text" name="name" id={nameFieldId} />
         <ErrorMessage name="name" component="span" className={css.error} />
 
-        <label htmlFor={emailFieldId}>Email</label>
-        <Field type="text" name="email" id={emailFieldId} />
-        <ErrorMessage name="number" component="span" className={css.error} />
-
-        <label htmlFor={passwordFieldId}>Password</label>
-        <Field type="password" name="password" id={passwordFieldId} />
+        <label htmlFor={nubmerFieldId}>Number</label>
+        <Field type="text" name="number" id={nubmerFieldId} />
         <ErrorMessage name="number" component="span" className={css.error} />
 
         <button type="submit" className={css.btn}>
-          Ragister
+          Add contact
         </button>
       </Form>
     </Formik>
   );
 };
 
-export default RegistrationForm;
+export default ContactForm;

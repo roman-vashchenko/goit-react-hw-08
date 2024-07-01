@@ -6,10 +6,14 @@ const AuthNav = () => {
     <div>
       <ul className={css.list}>
         <li>
-          <Link to="/register">Ragister</Link>
+          <Link className={css.link} to="/register">
+            Ragister
+          </Link>
         </li>
         <li>
-          <Link to="/login">Log In</Link>
+          <Link className={css.link} to="/login">
+            Log In
+          </Link>
         </li>
       </ul>
     </div>

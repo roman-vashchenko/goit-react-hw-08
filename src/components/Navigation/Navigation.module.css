@@ -2,3 +2,8 @@
   display: flex;
   gap: 35px;
 }
+
+.link {
+  display: inline-block;
+  padding: 20px 0;
+}
