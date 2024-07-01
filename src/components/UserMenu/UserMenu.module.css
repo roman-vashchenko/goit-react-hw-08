@@ -1,0 +1,9 @@
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.btn {
+  padding: 5px 10px;
+}

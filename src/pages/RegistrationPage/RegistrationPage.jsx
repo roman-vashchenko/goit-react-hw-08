@@ -7,7 +7,6 @@ const RegistrationPage = () => {
   const dispatch = useDispatch();
   const handleSubmit = (values) => {
     dispatch(register(values));
-    console.log(values);
   };
   return (
     <div className={css.container}>
