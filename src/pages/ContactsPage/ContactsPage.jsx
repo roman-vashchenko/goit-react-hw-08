@@ -2,12 +2,7 @@ import { useEffect, useState } from "react";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import ContactList from "../../components/ContactList/ContactList";
 import SearchBox from "../../components/SearchBox/SearchBox";
-import {
-  addContact,
-  deleteContact,
-  fetchContacts,
-  updateContact,
-} from "../../redux/contacts/operations";
+import { addContact, fetchContacts } from "../../redux/contacts/operations";
 import { useDispatch } from "react-redux";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
 import UpdateModal from "../../components/UpdateModal/UpdateModal";
@@ -25,14 +20,16 @@ const ContactsPage = () => {
     setContact(contact);
   };
 
-  const handleCloseModal = (updatedData) => {
-    if (updatedData === "cancel") {
-      setModalType(null);
-      return;
-    }
-    if (modalType === "delete") dispatch(deleteContact(contact.id));
-    if (modalType === "update") dispatch(updateContact(updatedData));
+  const handleCloseModal = () => {
     setModalType(null);
+    setContact(null);
+    // if (updatedData === "cancel") {
+    //   setModalType(null);
+    //   return;
+    // }
+    // if (modalType === "delete") dispatch(deleteContact(contact.id));
+    // if (modalType === "update") dispatch(updateContact(updatedData));
+    // setModalType(null);
   };
 
   useEffect(() => {
@@ -46,6 +43,7 @@ const ContactsPage = () => {
       {modalType === "delete" && (
         <DeleteModal
           isOpen={modalType === "delete"}
+          currentContact={contact}
           onClose={handleCloseModal}
         />
       )}

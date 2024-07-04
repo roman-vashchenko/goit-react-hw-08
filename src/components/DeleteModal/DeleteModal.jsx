@@ -1,5 +1,7 @@
 import ReactModal from "react-modal";
 import css from "../DeleteModal/DeleteModal.module.css";
+import { deleteContact } from "../../redux/contacts/operations";
+import { useDispatch } from "react-redux";
 
 ReactModal.defaultStyles.overlay.backgroundColor = "rgba(0, 0, 0, 0.3)";
 ReactModal.setAppElement("#root");
@@ -20,7 +22,8 @@ const customStyles = {
   },
 };
 
-const DeleteModal = ({ isOpen, onClose }) => {
+const DeleteModal = ({ isOpen, onClose, currentContact }) => {
+  const dispatch = useDispatch();
   return (
     <div>
       <ReactModal isOpen={isOpen} style={customStyles}>
@@ -30,15 +33,14 @@ const DeleteModal = ({ isOpen, onClose }) => {
           <button
             type="button"
             className={(css.btn, css.btnDelete)}
-            onClick={() => onClose("delete")}
+            onClick={() => {
+              dispatch(deleteContact(currentContact.id));
+              onClose();
+            }}
           >
             Delete
           </button>
-          <button
-            type="button"
-            className={css.btn}
-            onClick={() => onClose("cancel")}
-          >
+          <button type="button" className={css.btn} onClick={() => onClose()}>
             Cancel
           </button>
         </div>

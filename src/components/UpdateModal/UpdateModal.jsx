@@ -1,6 +1,8 @@
 import ReactModal from "react-modal";
 import { Field, Formik, Form } from "formik";
 import { useId } from "react";
+import { updateContact } from "../../redux/contacts/operations";
+import { useDispatch } from "react-redux";
 
 ReactModal.defaultStyles.overlay.backgroundColor = "rgba(0, 0, 0, 0.3)";
 ReactModal.setAppElement("#root");
@@ -22,11 +24,13 @@ const customStyles = {
 };
 
 const UpdateModal = ({ isOpen, onClose, currentContact }) => {
+  const dispatch = useDispatch();
   const nameFieldId = useId();
   const nubmerFieldId = useId();
 
   const handleSubmit = (values) => {
-    onClose(values);
+    dispatch(updateContact(values));
+    onClose();
   };
 
   return (
