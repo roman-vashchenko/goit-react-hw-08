@@ -5,7 +5,7 @@ import { refreshUser } from "./redux/auth/operations";
 import { useDispatch, useSelector } from "react-redux";
 import { RestrictedRoute } from "./components/RestrictedRoute/RestrictedRoute";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
-import { selectUser } from "./redux/auth/selectors";
+import { selectAuth } from "./redux/auth/selectors";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const RegistrationPage = lazy(() =>
@@ -16,7 +16,7 @@ const ContactsPage = lazy(() => import("./pages/ContactsPage/ContactsPage"));
 
 function App() {
   const dispatch = useDispatch();
-  const { isRefreshing } = useSelector(selectUser);
+  const { isRefreshing } = useSelector(selectAuth);
 
   useEffect(() => {
     dispatch(refreshUser());
