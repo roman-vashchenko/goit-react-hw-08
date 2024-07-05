@@ -23,13 +23,6 @@ const ContactsPage = () => {
   const handleCloseModal = () => {
     setModalType(null);
     setContact(null);
-    // if (updatedData === "cancel") {
-    //   setModalType(null);
-    //   return;
-    // }
-    // if (modalType === "delete") dispatch(deleteContact(contact.id));
-    // if (modalType === "update") dispatch(updateContact(updatedData));
-    // setModalType(null);
   };
 
   useEffect(() => {
