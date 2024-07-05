@@ -11,42 +11,27 @@ const authSlice = createSlice({
     token: null,
     isLoggedIn: false,
     isRefreshing: false,
-    isLoader: false,
     error: null,
   },
   extraReducers: (builder) => {
     builder
-      .addCase(register.pending, (state) => {
-        state.isLoader = true;
-      })
       .addCase(register.fulfilled, (state, { payload }) => {
-        state.isLoader = false;
         state.isLoggedIn = true;
         state.user = payload.user;
         state.token = payload.token;
       })
       .addCase(register.rejected, (state, { payload }) => {
-        state.isLoader = false;
         state.error = payload;
       })
-      .addCase(login.pending, (state) => {
-        state.isLoader = true;
-      })
       .addCase(login.fulfilled, (state, { payload }) => {
-        state.isLoader = false;
         state.isLoggedIn = true;
         state.user = payload.user;
         state.token = payload.token;
       })
       .addCase(login.rejected, (state, { payload }) => {
-        state.isLoader = false;
         state.error = payload;
       })
-      .addCase(logout.pending, (state) => {
-        state.isLoader = true;
-      })
       .addCase(logout.fulfilled, (state) => {
-        state.isLoader = false;
         state.user = {
           name: null,
           email: null,
@@ -54,8 +39,8 @@ const authSlice = createSlice({
         state.token = null;
         state.isLoggedIn = false;
       })
-      .addCase(logout.rejected, (state) => {
-        state.isLoader = false;
+      .addCase(logout.rejected, (state, { payload }) => {
+        state.error = payload;
       })
       .addCase(refreshUser.pending, (state) => {
         state.isRefreshing = true;
