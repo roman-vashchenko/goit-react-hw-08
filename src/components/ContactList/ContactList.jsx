@@ -6,7 +6,7 @@ import { selectFilteredContacts } from "../../redux/contacts/selectors";
 const ContactList = ({ openModal }) => {
   const visibleContacts = useSelector(selectFilteredContacts);
   return (
-    <div>
+    <div className={css.wrap}>
       {visibleContacts.length > 0 && (
         <ul className={css.list}>
           {visibleContacts.map((contact) => (

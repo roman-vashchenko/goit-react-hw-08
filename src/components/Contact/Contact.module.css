@@ -11,12 +11,18 @@
   font-style: italic;
 }
 
+.icon {
+  margin-right: 10px;
+}
+
+.butWrap {
+  display: flex;
+  flex-direction: column;
+}
 .btn {
-  background-color: #f9a583;
   border-color: transparent;
   border-radius: 5px;
-  width: 100px;
-  height: 25px;
+  background-color: #c4c9c3;
   font-size: 18px;
   font-weight: 700;
 }

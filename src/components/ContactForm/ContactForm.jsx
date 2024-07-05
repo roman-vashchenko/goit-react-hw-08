@@ -29,25 +29,27 @@ const ContactForm = ({ submit }) => {
   };
 
   return (
-    <Formik
-      initialValues={initialValues}
-      onSubmit={handleSubmit}
-      validationSchema={validationSchema}
-    >
-      <Form className={css.form}>
-        <label htmlFor={nameFieldId}>Name</label>
-        <Field type="text" name="name" id={nameFieldId} />
-        <ErrorMessage name="name" component="span" className={css.error} />
+    <div className={css.formWrap}>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleSubmit}
+        validationSchema={validationSchema}
+      >
+        <Form className={css.form}>
+          <label htmlFor={nameFieldId}>Name</label>
+          <Field type="text" name="name" id={nameFieldId} />
+          <ErrorMessage name="name" component="span" className={css.error} />
 
-        <label htmlFor={nubmerFieldId}>Number</label>
-        <Field type="text" name="number" id={nubmerFieldId} />
-        <ErrorMessage name="number" component="span" className={css.error} />
+          <label htmlFor={nubmerFieldId}>Number</label>
+          <Field type="text" name="number" id={nubmerFieldId} />
+          <ErrorMessage name="number" component="span" className={css.error} />
 
-        <button type="submit" className={css.btn}>
-          Add contact
-        </button>
-      </Form>
-    </Formik>
+          <button type="submit" className={css.btn}>
+            Add contact
+          </button>
+        </Form>
+      </Formik>
+    </div>
   );
 };
 

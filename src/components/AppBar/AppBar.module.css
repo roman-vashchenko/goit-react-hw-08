@@ -1,5 +1,7 @@
-.appBar {
+.header {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid black;
+  background-color: rgb(196, 201, 195);
+  padding: 0 10px;
+  font-weight: 500;
 }
