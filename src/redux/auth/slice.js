@@ -43,7 +43,7 @@ const authSlice = createSlice({
         state.error = payload;
       })
       .addCase(logout.pending, (state) => {
-        state.isLoading = true;
+        state.isLoader = true;
       })
       .addCase(logout.fulfilled, (state) => {
         state.isLoader = false;
