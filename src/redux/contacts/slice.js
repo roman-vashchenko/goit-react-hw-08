@@ -58,7 +58,7 @@ const contactsSlice = createSlice({
       .addCase(logout.fulfilled, (state) => {
         state.items = [];
         state.error = null;
-        state.isLoading = false;
+        state.isLoader = false;
       })
       .addCase(updateContact.pending, (state) => {
         state.isLoader = true;
