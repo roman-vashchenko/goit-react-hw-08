@@ -3,7 +3,7 @@ import css from "../DeleteModal/DeleteModal.module.css";
 import { deleteContact } from "../../redux/contacts/operations";
 import { useDispatch } from "react-redux";
 
-ReactModal.defaultStyles.overlay.backgroundColor = "rgba(0, 0, 0, 0.3)";
+ReactModal.defaultStyles.overlay.backgroundColor = "none";
 ReactModal.setAppElement("#root");
 
 const customStyles = {

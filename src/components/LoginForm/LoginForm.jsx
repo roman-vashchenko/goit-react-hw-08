@@ -1,11 +1,23 @@
 import { useId } from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import * as Yup from "yup";
 import css from "../LoginForm/LoginForm.module.css";
 
 const initialValues = {
   email: "",
   password: "",
 };
+
+const validationSchema = Yup.object().shape({
+  email: Yup.string()
+    .min(3, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+  password: Yup.string()
+    .min(3, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+});
 
 const LoginForm = ({ submit }) => {
   const emailFieldId = useId();
@@ -17,7 +29,11 @@ const LoginForm = ({ submit }) => {
   };
 
   return (
-    <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+    <Formik
+      initialValues={initialValues}
+      onSubmit={handleSubmit}
+      validationSchema={validationSchema}
+    >
       <Form className={css.form}>
         <label htmlFor={emailFieldId}>Email</label>
         <Field type="text" name="email" id={emailFieldId} />

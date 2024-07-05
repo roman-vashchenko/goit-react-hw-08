@@ -1,0 +1,42 @@
+.modal {
+  position: relative;
+  padding: 30px 30px;
+  background-color: rgb(196, 201, 195);
+}
+
+.text {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.form label {
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.form input {
+  background-color: #e7f1e5;
+  border-radius: 3px;
+}
+
+.btn {
+  background-color: #29b749;
+  border-color: transparent;
+  width: 100px;
+  height: 30px;
+  font-size: 18px;
+  border-radius: 30px;
+}
+.btnUpdate {
+  composes: btn;
+  margin-top: 15px;
+}
+
+.btnClose {
+  position: absolute;
+  top: 132px;
+  left: 159px;
+  composes: btn;
+}

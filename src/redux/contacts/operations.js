@@ -11,6 +11,7 @@ export const fetchContacts = createAsyncThunk(
       const { data } = await axios.get("contacts");
       return data;
     } catch (error) {
+      toast.error(`${error.message}`);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -24,6 +25,7 @@ export const addContact = createAsyncThunk(
       toast.success("Contact added successfully");
       return data;
     } catch (error) {
+      toast.error(`${error.message}`);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -37,6 +39,7 @@ export const deleteContact = createAsyncThunk(
       toast.success("Contact deleted successfully");
       return data;
     } catch (error) {
+      toast.error(`${error.message}`);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -53,6 +56,7 @@ export const updateContact = createAsyncThunk(
       toast.success("Contact update successfully");
       return data;
     } catch (error) {
+      toast.error(`${error.message}`);
       return thunkAPI.rejectWithValue(error.message);
     }
   }

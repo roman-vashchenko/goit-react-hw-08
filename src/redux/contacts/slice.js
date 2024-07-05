@@ -46,14 +46,14 @@ const contactsSlice = createSlice({
         state.isLoader = true;
       })
       .addCase(deleteContact.fulfilled, (state, { payload }) => {
-        state.loading = false;
+        state.isLoader = false;
         state.items = state.items.filter(
           (contact) => contact.id !== payload.id
         );
       })
       .addCase(deleteContact.rejected, (state, { payload }) => {
         state.error = payload;
-        state.loading = false;
+        state.isLoader = false;
       })
       .addCase(logout.fulfilled, (state) => {
         state.items = [];
@@ -61,17 +61,17 @@ const contactsSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(updateContact.pending, (state) => {
-        state.isLoading = true;
+        state.isLoader = true;
       })
       .addCase(updateContact.fulfilled, (state, { payload }) => {
         const index = state.items.findIndex(
           (contact) => contact.id === payload.id
         );
         state.items[index] = payload;
-        state.isLoading = false;
+        state.isLoader = false;
       })
       .addCase(updateContact.rejected, (state) => {
-        state.isLoading = false;
+        state.isLoader = false;
       });
   },
 });
