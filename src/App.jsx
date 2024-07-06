@@ -53,7 +53,7 @@ function App() {
               />
             }
           />
-          <Route path="*" element={<div>404</div>} />
+          <Route path="*" element={<div>Invalid page address</div>} />
         </Route>
       </Routes>
     </div>
