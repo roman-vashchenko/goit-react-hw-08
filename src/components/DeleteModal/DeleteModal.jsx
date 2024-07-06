@@ -28,7 +28,7 @@ const DeleteModal = ({ isOpen, onClose, currentContact }) => {
     <div>
       <ReactModal isOpen={isOpen} style={customStyles}>
         <div className={css.modal}>
-          <p className={css.text}>You want to delete a contact</p>
+          <p className={css.text}>You want to delete a contact?</p>
 
           <button
             type="button"
