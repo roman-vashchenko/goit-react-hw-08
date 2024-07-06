@@ -53,7 +53,7 @@ function App() {
               />
             }
           />
-          <Route path="*" element={<div>Invalid page address</div>} />
+          <Route path="*" element={<div>Such an address does not exist</div>} />
         </Route>
       </Routes>
     </div>

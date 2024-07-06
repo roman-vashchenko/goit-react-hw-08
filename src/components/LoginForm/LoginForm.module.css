@@ -37,4 +37,10 @@
   height: 40px;
   font-size: 20px;
   border-radius: 30px;
+  transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #37cd19;
 }
