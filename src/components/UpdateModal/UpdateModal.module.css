@@ -36,7 +36,7 @@
 
 .btnClose {
   position: absolute;
-  top: 132px;
+  top: 131px;
   left: 159px;
   composes: btn;
 }
