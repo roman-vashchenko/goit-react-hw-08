@@ -3,6 +3,7 @@ import { Field, Formik, Form } from "formik";
 import { useId } from "react";
 import { updateContact } from "../../redux/contacts/operations";
 import { useDispatch } from "react-redux";
+import { IoCloseCircleOutline } from "react-icons/io5";
 import css from "../UpdateModal/UpdateModal.module.css";
 
 ReactModal.defaultStyles.overlay.backgroundColor = "none";
@@ -17,7 +18,7 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -90%)",
     width: "450px",
-    height: "192px",
+    height: "195px",
     overflow: "hidden",
     padding: "0",
     border: "1px solid black",
@@ -64,9 +65,9 @@ const UpdateModal = ({ isOpen, onClose, currentContact }) => {
           <button
             type="button"
             className={css.btnClose}
-            onClick={() => onClose("cancel")}
+            onClick={() => onClose()}
           >
-            Cancel
+            <IoCloseCircleOutline size="25" />
           </button>
         </div>
       </ReactModal>

@@ -5,24 +5,27 @@ import { Toaster } from "react-hot-toast";
 import { ThreeDots } from "react-loader-spinner";
 import { useSelector } from "react-redux";
 import { selectLoading } from "../../redux/contacts/selectors";
+import css from "../Layout/Layout.module.css";
 
 const Layout = () => {
   const loader = useSelector(selectLoading);
   return (
     <div>
       <AppBar />
-      {loader && (
-        <ThreeDots
-          visible={true}
-          height="80"
-          width="80"
-          color="#4fa94d"
-          radius="9"
-          ariaLabel="three-dots-loading"
-          wrapperStyle={{ width: 80, margin: "0 auto" }}
-          wrapperClass=""
-        />
-      )}
+      <div className={css.wrapper}>
+        {loader && (
+          <ThreeDots
+            visible={true}
+            height="80"
+            width="100"
+            color="#4fa94d"
+            radius="9"
+            ariaLabel="three-dots-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+          />
+        )}
+      </div>
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
