@@ -1,6 +1,13 @@
 .list {
   display: flex;
-  gap: 35px;
+  gap: 15px;
+  margin-right: 10px;
+}
+
+@media (min-width: 768px) {
+  .list {
+    gap: 35px;
+  }
 }
 
 .link {

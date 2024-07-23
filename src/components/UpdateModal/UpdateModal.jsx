@@ -17,11 +17,12 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -90%)",
-    width: "450px",
-    height: "195px",
+    width: "300px",
+    height: "139px",
     overflow: "hidden",
-    padding: "0",
+    padding: "15px 15px",
     border: "1px solid black",
+    backgroundColor: "rgb(196, 201, 195)",
   },
 };
 
@@ -62,14 +63,21 @@ const UpdateModal = ({ isOpen, onClose, currentContact }) => {
               </button>
             </Form>
           </Formik>
-          <button
+          {/* <button
             type="button"
             className={css.btnClose}
             onClick={() => onClose()}
           >
             <IoCloseCircleOutline size="25" />
-          </button>
+          </button> */}
         </div>
+        <button
+          type="button"
+          className={css.btnClose}
+          onClick={() => onClose()}
+        >
+          <IoCloseCircleOutline size="25" />
+        </button>
       </ReactModal>
     </div>
   );

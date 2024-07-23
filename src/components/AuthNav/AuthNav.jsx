@@ -12,7 +12,7 @@ const AuthNav = () => {
       <ul className={css.list}>
         <li>
           <NavLink className={buildLinkClass} to="/register">
-            Ragister
+            Register
           </NavLink>
         </li>
         <li>

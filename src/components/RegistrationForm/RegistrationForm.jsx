@@ -57,7 +57,7 @@ const RegistrationForm = () => {
         <ErrorMessage name="number" component="span" className={css.error} />
 
         <button type="submit" className={css.btn}>
-          Ragister
+          Register
         </button>
       </Form>
     </Formik>
